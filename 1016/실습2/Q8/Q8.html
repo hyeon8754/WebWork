@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+
+        function getRandomColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+
+        var divElements = document.querySelectorAll('div');
+        for (var i = 0; i < divElements.length; i++) {
+            var randomColor = getRandomColor();
+            divElements[i].style.backgroundColor = randomColor;
+            divElements[i].textContent = randomColor; 
+        }
+    </script>
+</body>
+</html>
