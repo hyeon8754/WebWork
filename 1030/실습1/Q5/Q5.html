@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index 스타일 프로퍼티</title>
+    <style>
+        div{position: absolute;}
+        img{position: absolute;}
+        #spade_A {z-index: 1;}
+        #spade_2 {z-index: 1;}
+        #spade_3 {z-index: 1;}
+        #spade_7 {z-index: 1;}
+    </style>
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div>
+        <img id="spade_A" src="spade_A.png" width="100" height="140" alt="스페이드A">
+        <img id="spade_2" src="spade_2.png" width="100" height="140" alt="스페이드2">
+        <img id="spade_3" src="spade_3.png" width="100" height="140" alt="스페이드3">
+        <img id="spade_7" src="spade_7.png" width="100" height="140" alt="스페이드7">
+    </div>
+    <script>
+        const allCards = document.querySelectorAll('img');
+
+        function sendToBack(card) {
+            const zIndex = parseInt(card.style.zIndex);
+            if(zIndex === -1){
+                allCards.forEach(function (otherCard) {
+                otherCard.style.zIndex = 1;
+            });
+            }
+                card.style.zIndex = -1;
+        }
+
+        allCards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                sendToBack(card);
+            });
+        });
+    </script>
+</body>
+</html>
