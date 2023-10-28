@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <div>수식을 입력하고 &lt;Enter&gt;를 입력하세요</div>
+    <label for="expression">식</label>
+    <input type="text" id="expression" onkeypress="handleKeyPress(event)">
+    <br>
+    <label for="result">값</label>
+    <input type="text" id="result" readonly>
+    
+    <script>
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                // 필드 가져오기
+                const expressionField = document.getElementById('expression');
+                const resultField = document.getElementById('result');
+                
+                // 수식 가져오기
+                const expression = expressionField.value;
+                
+                // 결과 필드에 출력
+                try {
+                    const result = eval(expression);
+                    resultField.value = result;
+                } catch (error) {
+                    resultField.value = "계산 오류";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

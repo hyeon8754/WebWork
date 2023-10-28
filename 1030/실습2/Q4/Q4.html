@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 커서 만들기</title>
+    <style>
+
+
+        #customCursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h3>이미지 커서 만들기</h3>
+    <hr>
+    <div>마우스를 움직이면 이미지로 만든 커서가 마우스를 따라 다닙니다.</div>
+
+    <div><img id="customCursor" src="banana.png" alt="커서 이미지"></div>
+
+    <script>
+        const customCursor = document.getElementById('customCursor');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX - customCursor.offsetWidth / 2;
+            const y = e.clientY - customCursor.offsetHeight / 2;
+
+            customCursor.style.left = x + 'px';
+            customCursor.style.top = y + 'px';
+        });
+
+        // 커서 이미지 설정
+        document.body.style.cursor = 'none';
+    </script>
+</body>
+</html>
