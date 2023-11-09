@@ -37,5 +37,7 @@
     <h1>6주차 과제</h1>
     <hr>
     <a href="6-1.php">6-1</a>
+    <a href="6-2.php">6-2</a>
+    <a href="6-3.php">6-3</a>
 </body>
 </html>
