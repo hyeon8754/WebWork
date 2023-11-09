@@ -7,8 +7,8 @@
 </head>
 <body>
 <?php
-$value = 12;
-$result = ($value % 2 == 1) ? "odd" : "even";
+$value1 = 12;
+$result = ($value1 % 2 == 1) ? "odd" : "even";
 echo $result;
 ?>
 </body>

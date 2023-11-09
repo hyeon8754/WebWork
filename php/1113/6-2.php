@@ -9,7 +9,7 @@
     <form method="post" action="">
         <label for="number">숫자를 입력하세요:</label>
         <input type="text" name="number" id="number">
-        <button type="submit">계산하기</button>
+        <button type="submit">계산</button>
     </form>
 
     <?php
