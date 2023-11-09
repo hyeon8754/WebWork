@@ -38,7 +38,7 @@
    ```     
    - **Call by Reference:** 함수에 인자를 전달할 때, 해당 인자의 메모리 주소를 전달. 함수 내에서 매개변수를 변경하면 원본 값도 변경.
    ```php
-      function incrementByReference(&$num) {
+   function incrementByReference(&$num) {
        $num++;
        echo $num;
    }
