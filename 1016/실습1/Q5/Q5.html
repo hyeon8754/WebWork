@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>암호 확인</title>
+</head>
+<body>
+    <script>
+        var password;
+        
+        while (true) {
+            password = prompt("암호를 입력하세요:");
+            if (password === "you") {
+                break;
+            }
+        }
+
+        document.write("<h1>암호를 입력하라!</h1>");
+        document.write("<hr>");
+        document.write("<p>통과!</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write()</title>
+    <style>
+        th {
+            font-weight: normal;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1>document.write()로 표만들기</h1>");
+        document.write("<hr>");
+
+        document.write("<table border='1'>");
+        // 첫 번째 행 생성
+        document.write("<tr>");
+        document.write("<th>n</th>");
+        for (var i = 0; i < 10; i++) {
+        document.write("<th>" + i + "</th>");
+        }
+        document.write("</tr>");
+
+        // 두 번째 행 생성
+        document.write("<tr>");
+        document.write("<td>n²</td>");
+        for (var i = 0; i < 10; i++) {
+            document.write("<td>" + (i * i) + "</td>");
+        }
+        document.write("</tr>");
+
+        
+        document.write("</table>");
+    </script>
+</body>
+</html>

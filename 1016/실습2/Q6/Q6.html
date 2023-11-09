@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 분할</title>
+</head>
+<body>
+    <h3>문자열 분할</h3>
+    <hr>
+
+    <script>
+        var inputString = prompt("문자열을 입력하세요:");
+        
+        if (inputString !== null) { 
+            var parts = inputString.split("&");
+            document.write("<p>" + parts.join("<br>") + "</p>");
+        } else {
+            document.write("<p>입력이 취소되었습니다.</p>");
+        }
+    </script>
+</body>
+</html>

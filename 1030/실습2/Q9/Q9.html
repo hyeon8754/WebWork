@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 올리면 설명 출력</title>
+    <style>
+        #description {
+            position: absolute;
+            visibility: hidden;
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('li');
+            const description = document.getElementById('description');
+
+            items.forEach(item => {
+                item.addEventListener('mouseover', function(event) {
+                    const descriptionText = event.target.getAttribute('data-description');
+                    description.innerHTML = descriptionText;
+                    description.style.visibility = 'visible';
+                    description.style.left = event.clientX + 'px';
+                    description.style.top = event.clientY + 'px';
+                });
+
+                item.addEventListener('mouseout', function() {
+                    description.style.visibility = 'hidden';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li data-description="열심히 달려서 일주?">자전거로 대한민국 일주</li>
+        <li data-description="책 100권 읽기 힘들 것 같다">책 100권 읽기</li>
+        <li data-description="철인 3종 경기 준비가 가능할까?">철인 3종 경기 준비</li>
+        <li data-description="자바스크립트 정복······.">자바스크립트 정복</li>
+    </ul>
+    <div id="description"></div>
+</body>
+</html>

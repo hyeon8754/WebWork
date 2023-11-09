@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 크기 변경</title>
+</head>
+<body>
+    <h3>마우스 휠을 이용한 이미지 확대/축소</h3>
+    <hr>
+    <div>이미지 위에 휠을 위로 굴리면 이미지가 축소되고 아래로 굴리면 이미지가 확대됩니다.</div>
+    <img id="moonCat" width="192" height="128.2" src="moonCat.jpg" alt="달에 비친 고양이 그림자">
+    <script>
+        const img = document.getElementById('moonCat');
+
+        let currentScale = 1;
+
+        img.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const scaleFactor = e.deltaY > 0 ? 0.95 : 1.05; // 5% 축소 또는 확대
+
+            currentScale *= scaleFactor;
+            img.style.transform = `scale(${currentScale})`;
+        });
+    </script>
+</body>
+</html>

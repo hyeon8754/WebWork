@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 두 숫자를 비교하여 더 큰 수를 반환하는 함수
+        function big(a, b) {
+            a = parseFloat(a); // 문자열을 숫자로 변환
+            b = parseFloat(b);
+
+            if (isNaN(a) || isNaN(b)) {
+                return "올바른 숫자를 입력하세요.";
+            }
+
+            if (a > b) {
+                return a;
+            } else if (b > a) {
+                return b;
+            } else {
+                return "두 숫자는 같습니다.";
+            }
+        }
+    </script>
+    <script>
+        var b = big("625", "555");
+        document.write("큰수=" +b);
+    </script>
+</body>
+</html>

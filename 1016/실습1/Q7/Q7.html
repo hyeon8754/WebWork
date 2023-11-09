@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자릿수 비교</title>
+</head>
+<body>
+    <h1>큰 자리수와 낮은자리수 같은지 비교</h1>
+    <hr>
+    <script>
+
+        var input = prompt("숫자를 입력하세요:");
+
+        // 입력값을 숫자로 변환
+        var number = parseInt(input);
+
+        // 입력값이 숫자인지 확인
+        if (!isNaN(number)) {
+            var num = Math.abs(number); // 음수 처리
+            var firstDigit, lastDigit;
+
+            // 제일 큰 자리 수와 제일 낮은 자리 수 구하기
+            lastDigit = num % 10;
+            num = Math.floor(num / 10);
+
+            while (num > 0) {
+                firstDigit = num % 10;
+                num = Math.floor(num / 10);
+            }
+
+            var result = number+ ": ";
+            if (firstDigit === lastDigit) {
+                result += "같음";
+            } else {
+                result += "다름";
+            }
+            document.write(result);
+        } else {
+            alert("올바른 숫자를 입력하세요.");
+        }
+    </script>
+</body>
+</html>

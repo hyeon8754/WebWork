@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>갬블링 게임</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #numbers {
+            font-size: 24px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer; /* 결과 메시지를 클릭 가능하게 만듭니다. */
+        }
+        .number {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>갬블링 게임</h1>
+    <div id="numbers">
+        <span id="num1" class="number" onclick="changeNumber('num1')">0</span>
+        <span id="num2" class="number" onclick="changeNumber('num2')">0</span>
+        <span id="num3" class="number" onclick="changeNumber('num3'), checkResult()">0</span>
+    </div>
+    <div id="result" onclick="zero()">
+        마지막 번호를 클릭하여 결과 확인
+    </div>
+
+    <script>
+        // 난수 생성
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 3);
+        }
+
+        // 전부 초기화
+        function zero() {
+        document.getElementById('num1').textContent = '0';
+        document.getElementById('num2').textContent = '0';
+        document.getElementById('num3').textContent = '0';
+        document.getElementById('result').textContent = "마지막 번호를 클릭하여 결과 확인";
+}
+
+        // 번호 변경
+        function changeNumber(id) {
+            const num = document.getElementById(id);
+            num.textContent = getRandomNumber();
+        }
+
+        // 번호가 동일한지 확인
+        function checkWin() {
+            const num1 = document.getElementById('num1').textContent;
+            const num2 = document.getElementById('num2').textContent;
+            const num3 = document.getElementById('num3').textContent;
+            return num1 === num2 && num2 === num3;
+        }
+
+        // 게임 결과 처리
+        function checkResult() {
+            if (checkWin()) {
+                document.getElementById('result').textContent = "성공 (다시 하려면 여기를 클릭)";
+            } else {
+                document.getElementById('result').textContent = "실패 (다시 하려면 여기를 클릭)";
+            }
+        }
+    </script>
+</body>
+</html>
