@@ -26,5 +26,24 @@
 
 5. **call by value와 call by reference의 차이점:**
    - **Call by Value:** 함수에 인자를 전달할 때, 해당 인자의 값을 복사하여 전달. 함수 내에서 매개변수를 변경해도 원본 값에는 영향을 주지 않음.
-   - **Call by Reference:** 함수에 인자를 전달할 때, 해당 인자의 메모리 주소를 전달. 함수 내에서 매개변수를 변경하면 원본 값도 변경.
+   ```php
+   function increment($num) {
+    $num++;
+    echo $num;
+}
 
+$value = 5;
+increment($value); // 출력: 6
+echo $value; // 출력: 5
+   ```     
+   - **Call by Reference:** 함수에 인자를 전달할 때, 해당 인자의 메모리 주소를 전달. 함수 내에서 매개변수를 변경하면 원본 값도 변경.
+```php
+   function incrementByReference(&$num) {
+    $num++;
+    echo $num;
+}
+
+$value = 5;
+incrementByReference($value); // 출력: 6
+echo $value; // 출력: 6
+```
