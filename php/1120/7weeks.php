@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP 과제</title>
+    <title>6weeks</title>
     <style>
-        h3 {
+        h1 {
             color: #fff;
         }
 
@@ -31,22 +31,15 @@
         a:hover {
             background-color: #39414e;
         }
-
-        .php-version {
-            margin-top: 20px;
-            color: #fff;
-        }
     </style>
 </head>
 <body>
-
-    <h3>PHP 과제</h3>
+    <h1>7주차 과제</h1>
     <hr>
-    <a href="1113/6weeks.php">6주차 과제</a>
-    <a href="1120/7weeks.php">7주차 과제</a>
-    
-    <?php
-        echo '<div class="php-version">현재 PHP 버전: ' . phpversion() . '</div>';
-    ?>
+    <a href="7-1.php">7-1</a>
+    <a href="7-2.php">7-2</a>
+    <a href="7-3.php">7-3</a>
+    <a href="7-4.php">7-4</a>
+    <a href="7-5.php">7-5</a>
 </body>
 </html>
