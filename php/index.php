@@ -44,6 +44,7 @@
     <hr>
     <a href="1113/6weeks.php">6주차 과제</a>
     <a href="1120/7weeks.php">7주차 과제</a>
+    <a href="login/login.html">login</a>
     
     <?php
         echo '<div class="php-version">현재 PHP 버전: ' . phpversion() . '</div>';
